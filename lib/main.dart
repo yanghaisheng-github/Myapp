@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'transition_route_observer.dart';
-import 'login_screen.dart';
-import 'dashboard_screen.dart';
+import 'routes/transition_route_observer.dart';
+import 'routes/route.dart';
 
 void main() {
   //修改系统设置，以下为设置沉浸式状态栏
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Login Demo',
+      title: '契约',
       theme: ThemeData(
         // brightness: Brightness.dark,
         primarySwatch: Colors.deepPurple,
@@ -56,13 +55,15 @@ class MyApp extends StatelessWidget {
           overline: TextStyle(fontFamily: 'NotoSans'),
         ),
       ),
-      home: LoginScreen(),
+      //home: LoginScreen(),
+      initialRoute: '/',       //初始化加载的路由
+      onGenerateRoute: onGenerateRoute,
       // 继承NavigatorObserver，操作Navigator的相关方法时，回调相关的操作
       navigatorObservers: [TransitionRouteObserver()],
-      routes: {
-        LoginScreen.routeName: (context) => LoginScreen(),
-        DashboardScreen.routeName: (context) => DashboardScreen(),
-      },
+      // routes: {
+      //   LoginScreen.routeName: (context) => LoginScreen(),
+      //   DashboardScreen.routeName: (context) => DashboardScreen(),
+      // },
     );
   }
 }
