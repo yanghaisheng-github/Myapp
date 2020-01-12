@@ -1,5 +1,5 @@
-import 'package:flutter_wanandroid/common/common.dart';
-import 'package:flutter_wanandroid/models/models.dart';
+import '../common/common.dart';
+import '../model/models.dart';
 
 //模拟网络请求数据
 class HttpUtils {

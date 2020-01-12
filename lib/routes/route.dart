@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import '../ui/login_screen.dart';
 import '../ui/dashboard_screen.dart';
-
+import '../splash_page.dart';
 
 //定义命名路由
 final routes = {
   '/': (context, {argumtents}) => LoginScreen(),
   '/auth': (context, {argumtents}) => LoginScreen(),
   '/dashboard': (context, {argumtents}) => DashboardScreen(),
+  '/splash': (context, {argumtents}) => SplashPage(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {

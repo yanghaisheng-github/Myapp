@@ -1,7 +1,15 @@
-import 'utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:common_utils/common_utils.dart';
-import 'package:rxdart/rxdart.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flustars/flustars.dart';
+import 'package:fluintl/fluintl.dart';
+import 'package:flukit/flukit.dart';
+import 'utils/utils.dart';
+import 'utils/http_utils.dart';
+import 'model/models.dart';
+import 'common/common.dart';
+import 'res/colors.dart';
+import 'res/strings.dart';
 
 class SplashPage extends StatefulWidget {
   @override
@@ -35,16 +43,15 @@ class SplashPageState extends State<SplashPage> {
 
   void _init() {
     _loadSplashData();
-    Observable.just(1).delay(new Duration(milliseconds: 500)).listen((_) {
-//      SpUtil.putBool(Constant.key_guide, false);
-      if (SpUtil.getBool(Constant.key_guide, defValue: true) &&
-          ObjectUtil.isNotEmpty(_guideList)) {
-        SpUtil.putBool(Constant.key_guide, false);
-        _initBanner();
-      } else {
-        _initSplash();
-      }
-    });
+    //Observable.just(1).delay(new Duration(milliseconds: 500)).listen((_) {
+    if (SpUtil.getBool(Constant.key_guide, defValue: true) &&
+        ObjectUtil.isNotEmpty(_guideList)) {
+      SpUtil.putBool(Constant.key_guide, false);
+      _initBanner();
+    } else {
+      _initSplash();
+    }
+    //});
   }
 
   void _loadSplashData() {
@@ -148,7 +155,8 @@ class SplashPageState extends State<SplashPage> {
   }
 
   void _goMain() {
-    RouteUtil.goMain(context);
+    //RouteUtil.goMain(context);
+    Navigator.pushNamed(context, '/');
   }
 
   Widget _buildSplashBg() {
@@ -172,8 +180,8 @@ class SplashPageState extends State<SplashPage> {
         onTap: () {
           if (ObjectUtil.isEmpty(_splashModel.url)) return;
           _goMain();
-          NavigatorUtil.pushWeb(context,
-              title: _splashModel.title, url: _splashModel.url);
+          // NavigatorUtil.pushWeb(context,
+          //     title: _splashModel.title, url: _splashModel.url);
         },
         child: new Container(
           alignment: Alignment.center,
@@ -196,10 +204,12 @@ class SplashPageState extends State<SplashPage> {
       child: new Stack(
         children: <Widget>[
           new Offstage(
+            //0显示启动图,当offstage为false，控件显示；
             offstage: !(_status == 0),
             child: _buildSplashBg(),
           ),
           new Offstage(
+            //2显示引导图
             offstage: !(_status == 2),
             child: ObjectUtil.isEmpty(_bannerList)
                 ? new Container()
@@ -215,6 +225,7 @@ class SplashPageState extends State<SplashPage> {
           ),
           _buildAdWidget(),
           new Offstage(
+            //1显示广告图和倒计时跳过
             offstage: !(_status == 1),
             child: new Container(
               alignment: Alignment.bottomRight,

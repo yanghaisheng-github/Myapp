@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       //home: LoginScreen(),
-      initialRoute: '/',       //初始化加载的路由
+      initialRoute: '/splash',       //初始化加载的路由
       onGenerateRoute: onGenerateRoute,
       // 继承NavigatorObserver，操作Navigator的相关方法时，回调相关的操作
       navigatorObservers: [TransitionRouteObserver()],

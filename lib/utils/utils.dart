@@ -1,32 +1,18 @@
 import 'package:common_utils/common_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_wanandroid/common/common.dart';
-import 'package:flutter_wanandroid/res/index.dart';
-import 'package:lpinyin/lpinyin.dart';
+import '../common/common.dart';
+import '../res/index.dart';
 
 class Utils {
   static String getImgPath(String name, {String format: 'png'}) {
     return 'assets/images/$name.$format';
   }
 
-  static String getPinyin(String str) {
-    return PinyinHelper.getShortPinyin(str).substring(0, 1).toUpperCase();
-  }
-
-  static Color getCircleBg(String str) {
-    String pinyin = getPinyin(str);
-    return getCircleAvatarBg(pinyin);
-  }
 
   static Color getCircleAvatarBg(String key) {
     return circleAvatarMap[key];
   }
 
-  static Color getChipBgColor(String name) {
-    String pinyin = PinyinHelper.getFirstWordPinyin(name);
-    pinyin = pinyin.substring(0, 1).toUpperCase();
-    return nameToColor(pinyin);
-  }
 
   static Color nameToColor(String name) {
     // assert(name.length > 1);
