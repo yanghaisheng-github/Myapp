@@ -58,17 +58,17 @@ class LoginScreen extends StatelessWidget {
         recoverPasswordDescription: '某某某',
         recoverPasswordSuccess: '密码找回成功',
       ),
-      // theme: LoginTheme(
-      //   primaryColor: Colors.teal,
-      //   accentColor: Colors.yellow,
-      //   errorColor: Colors.deepOrange,
-      //   pageColorLight: Colors.indigo.shade300,
-      //   pageColorDark: Colors.indigo.shade500,
-      //   titleStyle: TextStyle(
-      //     color: Colors.greenAccent,
-      //     fontFamily: 'Quicksand',
-      //     letterSpacing: 4,
-      //   ),
+      theme: LoginTheme(
+        // primaryColor: Colors.teal,
+        // accentColor: Colors.orange,
+        // errorColor: Colors.deepOrange,
+        // pageColorLight: Colors.indigo.shade300,
+        // pageColorDark: Colors.indigo.shade500,
+        // titleStyle: TextStyle(
+        //   color: Colors.greenAccent,
+        //   fontFamily: 'Quicksand',
+        //   letterSpacing: 4,
+        // ),
       //   // beforeHeroFontSize: 50,
       //   // afterHeroFontSize: 20,
       //   bodyStyle: TextStyle(
@@ -133,7 +133,7 @@ class LoginScreen extends StatelessWidget {
       //     // shape: CircleBorder(side: BorderSide(color: Colors.green)),
       //     // shape: ContinuousRectangleBorder(borderRadius: BorderRadius.circular(55.0)),
       //   ),
-      // ),
+      ),
       emailValidator: (value) {
         if (!value.contains('@') || !value.endsWith('.com')) {
           return "邮箱必须包含'@'符号，也必须以'.com'结尾";
