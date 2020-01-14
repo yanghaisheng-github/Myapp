@@ -159,9 +159,11 @@ class LoginScreen extends StatelessWidget {
         return _loginUser(loginData);
       },
       onSubmitAnimationCompleted: () {
-        Navigator.of(context).pushReplacement(FadePageRoute(
-          builder: (context) => DashboardScreen(),
-        ));
+        print('成功登录');
+        // Navigator.of(context).pushReplacement(FadePageRoute(
+        //   builder: (context) => DashboardScreen(),
+        // ));
+        Navigator.of(context).pushReplacementNamed('/dashboard');
       },
       onRecoverPassword: (name) {
         print('Recover password info');
