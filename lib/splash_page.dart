@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:common_utils/common_utils.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flustars/flustars.dart';
-import 'package:fluintl/fluintl.dart';
 import 'package:flukit/flukit.dart';
 import 'utils/utils.dart';
 import 'utils/http_utils.dart';
 import 'model/models.dart';
 import 'common/common.dart';
 import 'res/colors.dart';
-import 'res/strings.dart';
 
 class SplashPage extends StatefulWidget {
   @override
@@ -44,13 +42,16 @@ class SplashPageState extends State<SplashPage> {
   void _init() {
     _loadSplashData();
     //Observable.just(1).delay(new Duration(milliseconds: 500)).listen((_) {
-    if (SpUtil.getBool(Constant.key_guide, defValue: true) &&
-        ObjectUtil.isNotEmpty(_guideList)) {
-      SpUtil.putBool(Constant.key_guide, false);
-      _initBanner();
-    } else {
-      _initSplash();
-    }
+    Future.delayed(const Duration(milliseconds: 300), () {
+      if (SpUtil.getBool(Constant.key_guide, defValue: true) &&
+          ObjectUtil.isNotEmpty(_guideList)) {
+        SpUtil.putBool(Constant.key_guide, false);
+        _initBanner();
+      } else {
+        _initSplash();
+      }
+    });
+
     //});
   }
 
@@ -237,8 +238,7 @@ class SplashPageState extends State<SplashPage> {
                 child: new Container(
                     padding: EdgeInsets.all(12.0),
                     child: new Text(
-                      IntlUtil.getString(context, Ids.jump_count,
-                          params: ['$_count']),
+                      "Hello World",
                       style: new TextStyle(fontSize: 14.0, color: Colors.white),
                     ),
                     decoration: new BoxDecoration(

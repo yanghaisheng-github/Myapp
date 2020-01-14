@@ -61,13 +61,6 @@ class Utils {
     }
   }
 
-  static bool isNeedLogin(String pageId) {
-    if (pageId == Ids.titleCollection) {
-      return true;
-    }
-    return false;
-  }
-
   static int getLoadStatus(bool hasError, List data) {
     if (hasError) return LoadStatus.fail;
     if (data == null) {

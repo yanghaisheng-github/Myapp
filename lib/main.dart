@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:login_test/utils/util_index.dart';
 import 'routes/transition_route_observer.dart';
 import 'routes/route.dart';
+import 'common/common.dart';
 
 void main() {
   //修改系统设置，以下为设置沉浸式状态栏
@@ -15,7 +17,26 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  MyApp({Key key}) : super(key: key);
+
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    super.initState();
+    _init();
+  }
+
+  void _init() async{
+    String token = SpUtil.getString(BaseConstant.keyAppToken);
+    if(ObjectUtil.isNotEmpty(token)){
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -56,7 +77,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       //home: LoginScreen(),
-      initialRoute: '/splash',       //初始化加载的路由
+      initialRoute: '/', //初始化加载的路由
       onGenerateRoute: onGenerateRoute,
       // 继承NavigatorObserver，操作Navigator的相关方法时，回调相关的操作
       navigatorObservers: [TransitionRouteObserver()],
