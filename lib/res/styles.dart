@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'index.dart';
+import 'colors.dart';
 import 'dimens.dart';
 
 class TextStyles {

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:login_test/utils/util_index.dart';
 import 'routes/transition_route_observer.dart';
 import 'routes/route.dart';
-import 'common/common.dart';
 
 void main() {
   //修改系统设置，以下为设置沉浸式状态栏
@@ -32,9 +30,9 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _init() async{
-    String token = SpUtil.getString(BaseConstant.keyAppToken);
-    if(ObjectUtil.isNotEmpty(token)){
-    }
+    // String token = SpUtil.getString(BaseConstant.keyAppToken);
+    // if(ObjectUtil.isNotEmpty(token)){
+    // }
   }
 
   @override

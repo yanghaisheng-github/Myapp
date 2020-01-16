@@ -2,8 +2,6 @@ import 'package:flutter/scheduler.dart' show timeDilation;
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 import '../model/constants.dart';
-import '../routes/custom_route.dart';
-import 'dashboard_screen.dart';
 import '../model/users.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -34,10 +32,10 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final inputBorder = BorderRadius.vertical(
-      bottom: Radius.circular(10.0),
-      top: Radius.circular(20.0),
-    );
+    // final inputBorder = BorderRadius.vertical(
+    //   bottom: Radius.circular(10.0),
+    //   top: Radius.circular(20.0),
+    // );
 
     return FlutterLogin(
       title: Constants.appName,
@@ -45,7 +43,7 @@ class LoginScreen extends StatelessWidget {
       //logoTag: Constants.logoTag,
       //titleTag: Constants.titleTag,
       messages: LoginMessages(
-        usernameHint: '用户名',
+        usernameHint: '邮箱',
         passwordHint: '密码',
         confirmPasswordHint: '再次输入密码',
         loginButton: '登录',
