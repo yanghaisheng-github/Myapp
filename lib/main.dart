@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'routes/transition_route_observer.dart';
 import 'routes/route.dart';
+import 'utils/SpUtil.dart';
 
-void main() {
+void main() async {
+
+  // 这句需要在初始化前执行，没办法
+  WidgetsFlutterBinding.ensureInitialized();
+  // 配置初始化
+  await SpUtil.init();
+
   //修改系统设置，以下为设置沉浸式状态栏
   //if (Platform.isAndroid)  //需要import 'dart:io';
   SystemChrome.setSystemUIOverlayStyle(
