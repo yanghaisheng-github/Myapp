@@ -45,6 +45,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // 去掉debug显示
+      debugShowCheckedModeBanner: false,
       title: '契约',
       theme: ThemeData(
         // brightness: Brightness.dark,
@@ -82,7 +84,7 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
       //home: LoginScreen(),
-      initialRoute: '/', //初始化加载的路由
+      initialRoute: '/hometabs', //初始化加载的路由
       onGenerateRoute: onGenerateRoute,
       // 继承NavigatorObserver，操作Navigator的相关方法时，回调相关的操作
       navigatorObservers: [TransitionRouteObserver()],

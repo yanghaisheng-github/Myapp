@@ -35,3 +35,6 @@ samples, guidance on mobile development, and a full API reference.
               ],
             ),
           ),
+
+## 添加主页面的BottomNavigationbar
+  - 参考：https://pub.flutter-io.cn/packages/bubbled_navigation_bar#-readme-tab-

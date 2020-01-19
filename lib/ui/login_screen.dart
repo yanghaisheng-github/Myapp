@@ -161,7 +161,7 @@ class LoginScreen extends StatelessWidget {
         // Navigator.of(context).pushReplacement(FadePageRoute(
         //   builder: (context) => DashboardScreen(),
         // ));
-        Navigator.of(context).pushReplacementNamed('/dashboard');
+        Navigator.of(context).pushReplacementNamed('/hometabs');
       },
       onRecoverPassword: (name) {
         print('Recover password info');
