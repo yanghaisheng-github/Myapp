@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
 import '../widgets/bubbled_navigation_bar.dart';
-import 'hometabs/home_page.dart';
+import 'hometabs/message_page.dart';
 import 'hometabs/contact_page.dart';
 import 'hometabs/agreement_page.dart';
 import 'hometabs/nearby_page.dart';
@@ -19,7 +19,7 @@ class HomeTabs extends StatefulWidget {
   ];
   final icons = [
     CupertinoIcons.bell,
-    CupertinoIcons.person,
+    CupertinoIcons.group,
     CupertinoIcons.location,
     CupertinoIcons.info,
     CupertinoIcons.profile_circled
@@ -101,8 +101,8 @@ class _HomeTabsState extends State<HomeTabs> {
           child: PageView(
             controller: _pageController,
             children: <Widget>[
+              MessagePage(),
               ContactPage(),
-              HomePage(),
               NearbyPage(),
               AgreementPage(),
               SettingsPage()

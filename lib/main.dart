@@ -6,8 +6,9 @@ import 'utils/SpUtil.dart';
 
 void main() async {
 
+  runApp(MyApp());
   // 这句需要在初始化前执行，没办法
-  WidgetsFlutterBinding.ensureInitialized();
+  //WidgetsFlutterBinding.ensureInitialized();
   // 配置初始化
   await SpUtil.init();
 
@@ -19,7 +20,7 @@ void main() async {
           SystemUiOverlayStyle.dark.systemNavigationBarColor,
     ),
   );
-  runApp(MyApp());
+  
 }
 
 class MyApp extends StatefulWidget {

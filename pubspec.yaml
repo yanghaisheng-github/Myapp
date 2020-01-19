@@ -25,6 +25,12 @@ dependencies:
   dio: ^3.0.8
   # 检测网路变化
   connectivity: ^0.4.6+2
+  # 扩展异步 Streams 和 StreamControllers
+  rxdart: ^0.23.1
+  # 添加微光效果
+  shimmer: ^1.0.1
+  # 一些开箱即用的flutter插件
+  flui: ^0.8.0
 
 dev_dependencies:
   flutter_test:
